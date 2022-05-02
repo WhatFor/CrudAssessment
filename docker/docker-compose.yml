@@ -1,0 +1,46 @@
+version: "3.9"
+services:
+  api:
+    container_name: api
+    build:
+      context: ../src/backend/
+      dockerfile: api.Dockerfile
+    networks:
+      - internal-network
+      - shared-network
+    ports:
+      - "5000:80"
+    environment:
+      - ConnectionStrings__Default=Server=app_db,1433;Database=Crud;User Id=sa;Password=Password123!;
+      - Seq__Uri=http://seq:5341
+    depends_on:
+      app_db:
+        condition: service_started
+    restart: on-failure
+  app_db:
+    container_name: app_db
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    networks:
+      - internal-network
+    ports:
+      - "1433:1433"
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Password123!
+  seq:
+    container_name: seq
+    image: datalust/seq
+    ports:
+      - "5341:80"
+    environment:
+      - ACCEPT_EULA=Y
+    networks:
+      - shared-network
+    volumes:
+      - ./data/seq:/data
+
+networks:
+  shared-network:
+    external: false
+  internal-network:
+    internal: true

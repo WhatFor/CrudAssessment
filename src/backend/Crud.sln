@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crud.Api", "Crud.Api\Crud.Api.csproj", "{53DB66BF-4DBA-4B90-B988-C9CB2A846476}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "docker-compose", "..\..\docker\docker-compose.dcproj", "{6BD2EC46-FA8F-44F3-AF33-903BBB347116}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crud.Data", "Crud.Data\Crud.Data.csproj", "{C146D247-2699-4D3F-BDD8-FF6CF3BA4176}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crud.IntegrationTests", "..\..\test\Crud.IntegrationTests\Crud.IntegrationTests.csproj", "{61D114C8-A5D9-40E6-9766-D8EFB09E65B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crud.UnitTests", "..\..\test\Crud.UnitTests\Crud.UnitTests.csproj", "{72DDCA3F-7710-4868-8040-63D3F22592EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crud.Shared", "Crud.Shared\Crud.Shared.csproj", "{1C219392-03E3-4289-9424-3B0E62C1A801}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{53DB66BF-4DBA-4B90-B988-C9CB2A846476}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53DB66BF-4DBA-4B90-B988-C9CB2A846476}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53DB66BF-4DBA-4B90-B988-C9CB2A846476}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53DB66BF-4DBA-4B90-B988-C9CB2A846476}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BD2EC46-FA8F-44F3-AF33-903BBB347116}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BD2EC46-FA8F-44F3-AF33-903BBB347116}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BD2EC46-FA8F-44F3-AF33-903BBB347116}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BD2EC46-FA8F-44F3-AF33-903BBB347116}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{C146D247-2699-4D3F-BDD8-FF6CF3BA4176}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C146D247-2699-4D3F-BDD8-FF6CF3BA4176}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C146D247-2699-4D3F-BDD8-FF6CF3BA4176}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C146D247-2699-4D3F-BDD8-FF6CF3BA4176}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61D114C8-A5D9-40E6-9766-D8EFB09E65B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61D114C8-A5D9-40E6-9766-D8EFB09E65B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61D114C8-A5D9-40E6-9766-D8EFB09E65B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61D114C8-A5D9-40E6-9766-D8EFB09E65B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72DDCA3F-7710-4868-8040-63D3F22592EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72DDCA3F-7710-4868-8040-63D3F22592EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72DDCA3F-7710-4868-8040-63D3F22592EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72DDCA3F-7710-4868-8040-63D3F22592EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C219392-03E3-4289-9424-3B0E62C1A801}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C219392-03E3-4289-9424-3B0E62C1A801}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C219392-03E3-4289-9424-3B0E62C1A801}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C219392-03E3-4289-9424-3B0E62C1A801}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(RiderSharedRunConfigurations) = postSolution
+		File = .rider-configuration\Run API.run.xml
+	EndGlobalSection
+EndGlobal
