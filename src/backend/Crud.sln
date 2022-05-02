@@ -55,6 +55,7 @@ Global
 	EndGlobalSection
 	GlobalSection(RiderSharedRunConfigurations) = postSolution
 		File = .rider-configuration\Run API.run.xml
+		File = .rider-configuration\Run in Docker.run.xml
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{72DDCA3F-7710-4868-8040-63D3F22592EC} = {5B6CC2FC-5479-4821-846B-ADC90E885FF7}
