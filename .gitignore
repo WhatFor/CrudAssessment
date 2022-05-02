@@ -14,7 +14,7 @@
 *.userprefs
 
 # Docker volumes
-docker/data/
+docker/Crud_App/data/
 
 # Rider
 .idea/

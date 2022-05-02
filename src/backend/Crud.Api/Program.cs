@@ -1,6 +1,10 @@
 using System.Reflection;
+using Crud.Api.Middleware;
+using Crud.Application;
 using Crud.Data;
-using FluentValidation.AspNetCore;
+using Crud.Shared.Validation;
+using FluentValidation;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using Serilog;
@@ -20,12 +24,17 @@ builder.Host.UseSerilog((_, config) => config
 builder.Services.AddDbContextPool<ApplicationDbContext>(o =>
     o.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
 
-builder.Services.AddHealthChecks()
+builder
+    .Services
+    .AddHealthChecks()
     .AddDbContextCheck<ApplicationDbContext>();
 
-builder.Services.AddControllers().AddFluentValidation();
-builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddControllers();
+builder.Services.AddMediatR(typeof(MediatorAnchor));
+builder.Services.AddValidatorsFromAssembly(Assembly.GetAssembly(typeof(MediatorAnchor)));
+builder.Services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>));
 
+builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(o =>
 {
     o.SwaggerDoc("v1", new OpenApiInfo
@@ -42,6 +51,7 @@ builder.Services.AddSwaggerGen(o =>
 var app = builder.Build();
 
 app
+    .UseMiddleware<ExceptionHandlerMiddleware>()
     .UseSwagger()
     .UseSwaggerUI()
     .UseHealthChecks("/health")

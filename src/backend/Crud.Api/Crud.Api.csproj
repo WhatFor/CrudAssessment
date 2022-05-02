@@ -6,7 +6,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
         <DockerfileContext>..\..\..</DockerfileContext>
-        <DockerComposeProjectPath>..\..\..\docker\docker-compose.dcproj</DockerComposeProjectPath>
+        <DockerComposeProjectPath>..\..\docker\Crud_App\docker-compose.dcproj</DockerComposeProjectPath>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
     </PropertyGroup>
 
@@ -14,6 +14,7 @@
         <PackageReference Include="FluentValidation" Version="11.0.0" />
         <PackageReference Include="FluentValidation.AspNetCore" Version="11.0.0" />
         <PackageReference Include="MediatR" Version="10.0.1" />
+        <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
         <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.4" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.4">
           <PrivateAssets>all</PrivateAssets>
@@ -30,6 +31,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\Crud.Application\Crud.Application.csproj" />
       <ProjectReference Include="..\Crud.Data\Crud.Data.csproj" />
       <ProjectReference Include="..\Crud.Shared\Crud.Shared.csproj" />
     </ItemGroup>
